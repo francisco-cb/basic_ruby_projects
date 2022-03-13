@@ -29,4 +29,6 @@ def use_cipher
   puts cipher(words, key)
 end
 
-use_cipher()
+if __FILE__ == $0
+  use_cipher()
+end
