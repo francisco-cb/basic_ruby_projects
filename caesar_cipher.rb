@@ -2,7 +2,10 @@ def cipher(words='', key=0)
   char_list = words.split('')
   
   char_list.each_with_index do |char, indx|
-    char_list[indx] = (char.ord + key).chr
+    # A-Z/a-z
+    if (char.ord <= 90 && 65 <= char.ord) || (char.ord <= 122 && 97 <= char.ord)
+      char_list[indx] = (char.ord + key).chr
+    end
   end
 
   char_list.join('')
